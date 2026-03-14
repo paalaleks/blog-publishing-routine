@@ -1,0 +1,22 @@
+{
+  "blogs": {
+    "personal": {
+      "label": "My Blog",
+      "github_owner": "your-username",
+      "github_repo": "your-blog-repo",
+      "github_branch": "master",
+      "blog_dir": "content/blog",
+      "image_dir": "public/images/blog",
+      "author": "Your Name"
+    },
+    "work": {
+      "label": "Work Blog",
+      "github_owner": "your-username",
+      "github_repo": "your-work-blog-repo",
+      "github_branch": "master",
+      "blog_dir": "content/work",
+      "image_dir": "public/images/work",
+      "author": "Your Name"
+    }
+  }
+}

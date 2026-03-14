@@ -1,0 +1,20 @@
+{
+  "name": "blog-publisher",
+  "version": "2.0.0",
+  "type": "module",
+  "bin": {
+    "blog-publish": "./bin/blog-publish.js"
+  },
+  "scripts": {
+    "list": "blog-publish --list"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.1.1",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}
