@@ -3,10 +3,10 @@
   "version": "2.0.0",
   "type": "module",
   "bin": {
-    "blog-publish": "./bin/blog-publish.js"
+    "blog-publishing-routine": "./bin/blog-publishing-routine.js"
   },
   "scripts": {
-    "list": "blog-publish --list"
+    "list": "blog-publishing-routine --list"
   },
   "dependencies": {
     "@octokit/rest": "^20.1.1",
