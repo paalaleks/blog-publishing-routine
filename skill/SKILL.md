@@ -1,5 +1,5 @@
 ---
-name: blog-publisher
+name: blog-publishing-routine
 description: >
   Publishes blog posts to the user's GitHub-hosted Next.js blog.
   Use this skill when the user wants to work on a blog post — drafting,
@@ -14,7 +14,7 @@ description: >
 Runs in **Claude Code only**. Claude can read and write files directly on the
 user's machine.
 
-**CLI:** `blog-publish` (global command — run from the project root)
+**CLI:** `blog-publishing-routine` (global command — run from the project root)
 
 **Prerequisite:** The project root must contain `blogs.config.json` and `.env`.
 
@@ -75,12 +75,12 @@ If the user provides a path to an image file already on disk, use that path dire
 
 Without image:
 ```bash
-blog-publish --blog personal --publish drafts/blog-draft.md
+blog-publishing-routine --blog personal --publish drafts/blog-draft.md
 ```
 
 With image:
 ```bash
-blog-publish --blog personal --publish drafts/blog-draft.md --image drafts/blog-hero.jpg
+blog-publishing-routine --blog personal --publish drafts/blog-draft.md --image drafts/blog-hero.jpg
 ```
 
 ### Step 3 — Report back
@@ -112,7 +112,7 @@ If the user provides a path to an image file already on disk, use that path dire
 ### Step 3 — Run the command
 
 ```bash
-blog-publish --blog personal --add-image <slug> --image drafts/blog-hero.jpg
+blog-publishing-routine --blog personal --add-image <slug> --image drafts/blog-hero.jpg
 ```
 
 ### Step 4 — Report back
@@ -130,7 +130,7 @@ When the user wants to edit or update an already-published post:
 2. Run:
 
 ```bash
-blog-publish --blog personal --update <slug>
+blog-publishing-routine --blog personal --update <slug>
 ```
 
 The script reads from `_published/` and commits the updated version to GitHub.
@@ -143,7 +143,7 @@ No need to copy to `drafts/` first.
 When the user says "remove", "delete", or "unpublish":
 
 ```bash
-blog-publish --blog personal --remove <slug>
+blog-publishing-routine --blog personal --remove <slug>
 ```
 
 Ask for the slug if not provided. Confirm with the commit URL.
@@ -154,7 +154,7 @@ Ask for the slug if not provided. Confirm with the commit URL.
 
 | Error | Fix |
 |-------|-----|
-| `blogs.config.json not found in current directory` | Run `blog-publish` from the project root |
+| `blogs.config.json not found in current directory` | Run `blog-publishing-routine` from the project root |
 | `Missing GITHUB_TOKEN in .env` | Add `.env` with `GITHUB_TOKEN=github_pat_...` to project root |
 | `401 Unauthorized` | GitHub token expired or wrong scope |
 | `Content file not found` | Draft file path is wrong |

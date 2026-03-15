@@ -1,13 +1,13 @@
 #!/usr/bin/env tsx
 
 /**
- * Blog Publisher (multi-blog, TypeScript)
+ * Blog Publishing Routine (multi-blog, TypeScript)
  *
  * Usage:
- *   blog-publish --list
- *   blog-publish --blog <key> --publish <file.md> [--image <path>]
-  blog-publish --blog <key> --update <slug>
- *   blog-publish --blog <key> --remove <slug>
+ *   blog-publishing-routine --list
+ *   blog-publishing-routine --blog <key> --publish <file.md> [--image <path>]
+  blog-publishing-routine --blog <key> --update <slug>
+ *   blog-publishing-routine --blog <key> --remove <slug>
  *
  * Required env vars:
  *   GITHUB_TOKEN   - GitHub fine-grained token (Contents: read & write)
@@ -96,7 +96,7 @@ function parseArgs(): ParsedArgs {
     const slug = args[fetchIdx + 1];
     if (!slug) {
       console.error(
-        "❌ Provide a slug: blog-publish --blog <key> --fetch <slug>",
+        "❌ Provide a slug: blog-publishing-routine --blog <key> --fetch <slug>",
       );
       process.exit(1);
     }
@@ -109,7 +109,7 @@ function parseArgs(): ParsedArgs {
     const slug = args[updateIdx + 1];
     if (!slug) {
       console.error(
-        "❌ Provide a slug: blog-publish --blog <key> --update <slug>",
+        "❌ Provide a slug: blog-publishing-routine --blog <key> --update <slug>",
       );
       process.exit(1);
     }
@@ -121,7 +121,7 @@ function parseArgs(): ParsedArgs {
     const slug = args[removeIdx + 1];
     if (!slug) {
       console.error(
-        "❌ Provide a slug: blog-publish --blog <key> --remove <slug>",
+        "❌ Provide a slug: blog-publishing-routine --blog <key> --remove <slug>",
       );
       process.exit(1);
     }
@@ -135,7 +135,7 @@ function parseArgs(): ParsedArgs {
     const imagePath = imageIdx !== -1 ? args[imageIdx + 1] : undefined;
     if (!slug) {
       console.error(
-        "❌ Provide a slug: blog-publish --blog <key> --add-image <slug> --image <path>",
+        "❌ Provide a slug: blog-publishing-routine --blog <key> --add-image <slug> --image <path>",
       );
       process.exit(1);
     }
@@ -173,13 +173,13 @@ function parseArgs(): ParsedArgs {
 function printUsage(): void {
   console.error(`
 Usage:
-  blog-publish init
-  blog-publish --list
-  blog-publish --blog <key> --publish <file.md> [--image <path>]
-  blog-publish --blog <key> --update <slug>
-  blog-publish --blog <key> --remove <slug>
-  blog-publish --blog <key> --fetch <slug>
-  blog-publish --blog <key> --add-image <slug> --image <path>
+  blog-publishing-routine init
+  blog-publishing-routine --list
+  blog-publishing-routine --blog <key> --publish <file.md> [--image <path>]
+  blog-publishing-routine --blog <key> --update <slug>
+  blog-publishing-routine --blog <key> --remove <slug>
+  blog-publishing-routine --blog <key> --fetch <slug>
+  blog-publishing-routine --blog <key> --add-image <slug> --image <path>
   `);
 }
 
@@ -223,7 +223,7 @@ function initProject(): void {
   console.log("\nNext steps:");
   console.log("  1. Edit blogs.config.json with your GitHub repo details");
   console.log("  2. Add your GitHub token to .env");
-  console.log("  3. Run: blog-publish --list");
+  console.log("  3. Run: blog-publishing-routine --list");
 }
 
 // ─── Validate env ─────────────────────────────────────────────────────────────
