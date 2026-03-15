@@ -20,6 +20,7 @@ user's machine.
 
 **Blog images always go to:** `public/images/blog/` in the repo
 **Frontmatter image field:** `/images/blog/filename.jpg`
+**Image aspect ratio:** 16:9
 
 ---
 
